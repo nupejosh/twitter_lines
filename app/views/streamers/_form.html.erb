@@ -1,0 +1,21 @@
+<%= form_for(@streamer) do |f| %>
+  <% if @streamer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@streamer.errors.count, "error") %> prohibited this streamer from being saved:</h2>
+
+      <ul>
+      <% @streamer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hash_tag %><br />
+    <%= f.text_field :hash_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

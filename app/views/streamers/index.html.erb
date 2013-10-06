@@ -1,0 +1,23 @@
+<h1>Listing streamers</h1>
+
+<table>
+  <tr>
+    <th>Hash tag</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @streamers.each do |streamer| %>
+  <tr>
+    <td><%= streamer.hash_tag %></td>
+    <td><%= link_to 'Show', streamer %></td>
+    <td><%= link_to 'Edit', edit_streamer_path(streamer) %></td>
+    <td><%= link_to 'Destroy', streamer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Streamer', new_streamer_path %>
