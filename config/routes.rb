@@ -1,7 +1,7 @@
 TwitterLines::Application.routes.draw do
   resources :streamers
 
-
+  root :to => 'streamers#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

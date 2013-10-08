@@ -24,7 +24,7 @@ class StreamersController < ApplicationController
   # GET /streamers/new
   # GET /streamers/new.json
   def new
-    @streamer = Streamer.new
+    @streamer = Streamer.new.stream_it(params[:hash_tag])
 
     respond_to do |format|
       format.html # new.html.erb
